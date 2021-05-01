@@ -1,13 +1,15 @@
-scale := 15
+scale := 10
 reverse := -1 ; 1 for normal direction, -1 for mirror
 mode := "nokon"
 
-stretch_x_coeff := 0.5
+stretch_x_coeff := 1.0
 
-sleep_draw := 40 ;40
-sleep_skip := 15 ;15
-sleep_changeline = 5
-sleep_keydown = 30
+; https://www.autohotkey.com/docs/commands/Sleep.htm
+; Due to the granularity of the OS's time-keeping system, Delay is typically rounded up to the nearest multiple of 10 or 15.6 milliseconds (depending on the type of hardware and drivers installed)
+sleep_draw := 38 ;40
+sleep_skip := 38 ;15
+sleep_changeline := 5
+sleep_keydown := 30
 mvsize := 2
 
 
@@ -61,20 +63,24 @@ mouse_konUp() {
 
 mouse_clickDown() {
   global mode
+  global sleep_keydown
   if (mode = "kon") {
     mouse_konDown()
     return
   }
   DllCall("mouse_event", uint, 2, int, 0, int, 0)
+  sleep, sleep_keydown
 }
 
 mouse_clickUp() {
   global mode
+  global sleep_keydown
   if (mode = "kon") {
     mouse_konUp()
     return
   }
   DllCall("mouse_event", uint, 4, int, 0, int, 0)
+  sleep, sleep_keydown
 }
 
 ; move the mouse

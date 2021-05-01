@@ -24,6 +24,7 @@ fn_moveToStartPos(text) {
   global linelen
   global mvsize
   global sleep_draw
+  global sleep_changeline
   global scale
   global yonechar
   global xonechar
@@ -36,7 +37,7 @@ fn_moveToStartPos(text) {
   startposx := -1 * scale * (len/2) * xonechar
   startposy := -1 * scale * h * yonechar
   _mvsize := mvsize
-  _sleep := sleep_draw
+  _sleep := sleep_changeline
   ;fn_hint(format("{}, {}, {}, {}", startposx, startposy, _sleep, _mvsize))
   mouse_move(startposx,startposy, _sleep, _mvsize)
   sleep _sleep
@@ -179,7 +180,7 @@ fn_execInstruction(connection, xcursym, ycursym, xsym, ysym) {
   if (connection = ":") {
     mouse_clickUp()
     _sleep := sleep_skip
-    _mvsize := mvsize*2
+    _mvsize := mvsize*3
   }
   xcur := glyph_symToInt[xcursym]
   ycur := glyph_symToInt[ycursym]

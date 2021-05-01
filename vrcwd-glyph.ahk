@@ -51,8 +51,8 @@ glyph_e = lx:lx.rx.ct.lx.cz.rz
 glyph_f = cj.ci.rt:lx.rx
 glyph_g = lj.ry.rt.lx.rz
 glyph_h = lh.lz.ct.rz
-glyph_i = cz.ct:ci.ci
-glyph_j = lz:lz.cj.ct:ci.ci
+glyph_i = cz.ct:ci.ch
+glyph_j = lz:lz.cj.ct:ci.ch
 glyph_k = lh.lz.rt.cx.rz
 glyph_l = ch.cz
 glyph_m = lt.lz.ct.cz.rt.rz
@@ -70,11 +70,17 @@ glyph_x = lt.rz:lz.rt
 glyph_y = lt.cz.rt.ly
 glyph_z = lt.rt.lz.rz
 
-glyph_charToName := {" ": "space",  ",": "comma", "=": "eq", "<": "lt", ">": "gt" }
+glyph_charToName := {" ": "space",  ",": "comma", "=": "eq", "<": "lt", ">": "gt", ".": "dot", "!": "exclamation", "?": "question", "(": "roundBracketOpen", ")": "roundBracketClose", "'": "quote" }
 
 glyph_underscore = lz.rz
 ;glyph_space = lz:rz
 glyph_space = rt
 glyph_eq = lt.rt:lx.rx
 glyph_lt = rt.lx.rx
-glyph_comma = rz.rj
+glyph_comma = lz.cz.cj
+glyph_dot = cz.cj
+glyph_exclamation = cj.cz:cx.ch
+glyph_question = lh.rh.ri.ct.cx:cz.cj
+glyph_roundBracketOpen = rh.ci.cx.rz
+glyph_roundBracketClose = lh.ci.cx.lz
+glyph_quote = ci.ch
